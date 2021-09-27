@@ -24,10 +24,11 @@
           <Button fx:id="btNew" mnemonicParsing="false" onAction="#onBtNewAction" text="New" />
         </items>
       </ToolBar>
-      <TableView fx:id="tableViewDepartment" prefHeight="200.0" prefWidth="200.0">
+      <TableView fx:id="tableViewDepartment" prefHeight="200.0" prefWidth="383.0">
         <columns>
-          <TableColumn fx:id="tableColumnId" prefWidth="139.0" text="Id" />
-          <TableColumn fx:id="tableColumnName" prefWidth="274.0" text="Name" />
+          <TableColumn fx:id="tableColumnId" prefWidth="65.0" text="Id" />
+          <TableColumn fx:id="tableColumnName" prefWidth="241.0" text="Name" />
+            <TableColumn fx:id="tableColumnEDIT" prefWidth="106.0" text="Action" />
         </columns>
       </TableView>
    </children>
