@@ -15,7 +15,7 @@ public class App extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/MainView.fxml"));
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/views/MainView.fxml"));
 			ScrollPane scrollpane = loader.load();
 
 			scrollpane.setFitToHeight(true);
