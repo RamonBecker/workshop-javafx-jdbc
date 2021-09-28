@@ -100,7 +100,7 @@ public class SellerDaoJDBC implements SellerDao {
 
 		} catch (SQLException e) {
 			throw new DBException(e.getMessage());
-		}finally {
+		} finally {
 			DB.closeStatement(st);
 			DB.closeConnection();
 		}
@@ -222,7 +222,7 @@ public class SellerDaoJDBC implements SellerDao {
 		seller.setName(rs.getString("Name"));
 		seller.setEmail(rs.getString("Email"));
 		seller.setBaseSalary(rs.getDouble("BaseSalary"));
-		seller.setBirthDate(rs.getDate("BirthDate"));
+		seller.setBirthDate(new java.util.Date(rs.getTimestamp("BirthDate").getTime()));
 		seller.setDepartment(dep);
 		return seller;
 	}
