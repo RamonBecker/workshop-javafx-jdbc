@@ -40,6 +40,11 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 		} catch (SQLException e) {
 			throw new DBException(e.getMessage());
 		} finally {
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 			DB.closeStatement(st);
 			DB.closeResultSet(rs);
 		}
@@ -51,8 +56,9 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 		ResultSet rs = null;
 		try {
 			st = conn.prepareStatement("SELECT * FROM department ORDER BY Name");
+			st.setQueryTimeout(0);
 			rs = st.executeQuery();
-
+			
 			List<Department> list = new ArrayList<>();
 
 			while (rs.next()) {
@@ -65,6 +71,11 @@ public class DepartmentDaoJDBC implements DepartmentDao {
 		} catch (SQLException e) {
 			throw new DBException(e.getMessage());
 		} finally {
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 			DB.closeStatement(st);
 			DB.closeResultSet(rs);
 		}

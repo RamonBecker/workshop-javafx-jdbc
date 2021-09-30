@@ -131,6 +131,11 @@ public class SellerDaoJDBC implements SellerDao {
 		} catch (SQLException e) {
 			throw new DBException(e.getMessage());
 		} finally {
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 			DB.closeStatement(st);
 			DB.closeResultSet(rs);
 			DB.closeConnection();
@@ -169,6 +174,12 @@ public class SellerDaoJDBC implements SellerDao {
 		} catch (SQLException e) {
 			throw new DBException(e.getMessage());
 		} finally {
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+			
 			DB.closeStatement(st);
 			DB.closeResultSet(rs);
 			DB.closeConnection();
